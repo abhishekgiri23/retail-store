@@ -8,12 +8,12 @@ public class ProductPricing extends PricingPolicy {
 
     private final double priceFactor;
 
-    public ProductPricing(Item baseItem, int percentPromotion) {
+    public ProductPricing(Item baseItem, int percent) {
         super(baseItem);
-        if (percentPromotion < 0 || percentPromotion > 100 ) {
-            throw new IllegalArgumentException("percentPromotion must be in [0,100]");
+        if (percent < 0 || percent > 100 ) {
+            throw new IllegalArgumentException("percent must be in [0,100]");
         }
-        this.priceFactor = (100 - percentPromotion) / 100.0;
+        this.priceFactor = (100 - percent) / 100.0;
     }
 
     @Override
