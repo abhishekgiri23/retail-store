@@ -28,8 +28,8 @@ public class DiscountTest {
     public void setUp() {
         employee = new User(UserType.EMPLOYEE, "Stark");
         affiliate = new User(UserType.AFFILIATE, "Evan");
-        simpleUser = new User(UserType.SIMPLE, "Amanda");
-        simpleUserWith2Years = new User(UserType.SIMPLE, "Lyndon", LocalDateTime.of(2018, 7, 19, 6, 40, 45));
+        simpleUser = new User(UserType.REGULAR, "Amanda");
+        simpleUserWith2Years = new User(UserType.REGULAR, "Lyndon", LocalDateTime.of(2018, 7, 19, 6, 40, 45));
         groceryItem = new Product("Honey", 20, ItemType.GROCERY);
         otherItem = new Product("PS5", 222, ItemType.OTHER);
         discountPolicy = new CalculateDiscount();

@@ -17,7 +17,7 @@ public class BasketTest {
 
     @Before
     public void setUp() {
-        User user = new User(UserType.SIMPLE, "Stark");
+        User user = new User(UserType.REGULAR, "Stark");
         basket = new Basket(user);
         item = new Product("something", 1000, ItemType.OTHER);
     }

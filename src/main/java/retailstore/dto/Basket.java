@@ -54,7 +54,7 @@ public class Basket {
       }
       // If a user has been a customer for 2 or more years apply 5% discount
       else
-        if (user.getType() == UserType.SIMPLE
+        if (user.getType() == UserType.REGULAR
             && ChronoUnit.YEARS.between(user.getJoiningDate(), LocalDateTime.now()) >= 2) {
           item = new ProductPricing(itemToBuy, 5);
         } else {
