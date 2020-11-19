@@ -11,7 +11,7 @@ public class CalculateDiscount implements DiscountPolicy {
     }
 
     int discountFactor = (int) totalAmount / 100;
-    double discount = discountFactor * 5;
+    double discount = (double)discountFactor * 5;
     return totalAmount - discount;
   }
 
