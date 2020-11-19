@@ -20,16 +20,16 @@ public class DiscountTest {
     private Item otherItem;
     private User employee;
     private User affiliate;
-    private User simpleUser;
-    private User simpleUserWith2Years;
+    private User regularUser;
+    private User regularUserWith2Years;
     private DiscountPolicy discountPolicy;
 
     @Before
     public void setUp() {
         employee = new User(UserType.EMPLOYEE, "Stark");
         affiliate = new User(UserType.AFFILIATE, "Evan");
-        simpleUser = new User(UserType.REGULAR, "Amanda");
-        simpleUserWith2Years = new User(UserType.REGULAR, "Lyndon", LocalDateTime.of(2018, 7, 19, 6, 40, 45));
+        regularUser = new User(UserType.REGULAR, "Amanda");
+        regularUserWith2Years = new User(UserType.REGULAR, "Lyndon", LocalDateTime.of(2018, 7, 19, 6, 40, 45));
         groceryItem = new Product("Honey", 20, ItemType.GROCERY);
         otherItem = new Product("PS5", 222, ItemType.OTHER);
         discountPolicy = new CalculateDiscount();
@@ -70,7 +70,7 @@ public class DiscountTest {
 
     @Test
     public void SimpleUserWithGroceryTest() {
-        Basket basket = new Basket(simpleUser, discountPolicy);
+        Basket basket = new Basket(regularUser, discountPolicy);
         basket.add(groceryItem, 4);
         assertEquals(80, basket.total(), 0.01);
 
@@ -78,14 +78,14 @@ public class DiscountTest {
 
     @Test
     public void SimpleUserWithOtherItemTest() {
-        Basket basket = new Basket(simpleUser, discountPolicy);
+        Basket basket = new Basket(regularUser, discountPolicy);
         basket.add(otherItem, 4);
         assertEquals(848, basket.total(), 0.01);
     }
 
     @Test
     public void SimpleUserWith2YearsWithGroceryTest() {
-        Basket basket = new Basket(simpleUserWith2Years, discountPolicy);
+        Basket basket = new Basket(regularUserWith2Years, discountPolicy);
         basket.add(groceryItem, 4);
         assertEquals(80, basket.total(), 0.01);
 
@@ -93,7 +93,7 @@ public class DiscountTest {
 
     @Test
     public void test_simpleUserWith2YearsWithOtherItem() {
-        Basket basket = new Basket(simpleUserWith2Years, discountPolicy);
+        Basket basket = new Basket(regularUserWith2Years, discountPolicy);
         basket.add(otherItem, 4);
         assertEquals(803.6, basket.total(), 0.01);
 
