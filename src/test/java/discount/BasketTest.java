@@ -29,7 +29,7 @@ public class BasketTest {
 
     @Test
     public void SingleBasicItemCostsItsUnitPriceTest() {
-        basket.add(item);
+        basket.add(item,1);
         assertEquals(item.getUnitPrice(), basket.total(), 0.01);
     }
 
@@ -44,7 +44,7 @@ public class BasketTest {
     public void SeparatelyAddingTest() {
         int howMany = 3;
         for (int i = howMany; i > 0; i--) {
-            basket.add(item);
+            basket.add(item,1);
         }
         assertEquals(howMany * item.getUnitPrice(), basket.total(), 0.01);
     }

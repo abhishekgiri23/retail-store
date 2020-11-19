@@ -18,12 +18,12 @@ public class RetailStore {
     Item otherItem = new Product("PS5", 990, ItemType.OTHER);
     DiscountPolicy discountPolicy = new CalculateDiscount();
 
-    Basket cart = new Basket(employee, discountPolicy);
-    cart.add(groceryItem, 4);
-    cart.add(otherItem, 1);
+    Basket basket = new Basket(employee, discountPolicy);
+    basket.add(groceryItem, 4);
+    basket.add(otherItem, 1);
     System.out.println("-----OUTPUT-----");
     System.out.println("********************");
-    System.out.println(cart.total());
+    System.out.println(basket.total());
     System.out.println("********************");
 
   }

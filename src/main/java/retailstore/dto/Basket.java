@@ -39,10 +39,6 @@ public class Basket {
     return result;
   }
 
-  public void add(Item itemToBuy) {
-    add(itemToBuy, 1);
-  }
-
   // To add multiple quantities of item
   public void add(Item itemToBuy, int howMany) {
     Item item;
